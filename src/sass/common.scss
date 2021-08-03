@@ -1,0 +1,113 @@
+.select-brand {
+  margin-top: 3rem;
+  section {
+    .select-brand-heading {
+      font-size: 1.5rem;
+      font-family: "Work-Sans-Regular";
+    }
+
+    .select-brand-container {
+      display: flex;
+      flex-wrap: wrap;
+      .individual-brand-container {
+        box-shadow: 0px 0px 15px 5px #d3d3d3;
+        -webkit-box-shadow: 0px 0px 15px 5px #d3d3d3;
+        -moz-box-shadow: 0px 0px 15px 5px #d3d3d3;
+        display: flex;
+        margin: 15px 10px;
+        width: 100px;
+        border-radius: 15px;
+        text-align: center;
+        align-items: center;
+        .individual-brand {
+          cursor: pointer;
+          .individual-brand-wrapper {
+            margin: 10px 0;
+            .individual-brand-img {
+              width: 90%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.device-type-comp {
+  margin: 40px auto;
+  border-radius: 10px;
+  padding: 40px 20px;
+  box-shadow: 0px 0px 15px 5px #eeeeee;
+  -webkit-box-shadow: 0px 0px 15px 5px #eeeeee;
+  -moz-box-shadow: 0px 0px 15px 5px #eeeeee;
+  background: #fafafa;
+
+  .content-wrapper {
+    transform: translateY(0);
+
+    .content-heading {
+      font-size: calc(1.3rem + (45 - 22) * ((100vw - 320px) / (1920 - 320)));
+      font-family: "Work-Sans-Regular";
+      // font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    .benifits {
+      font-family: "Work-Sans-Light";
+      font-size: 1rem;
+      line-height: 1rem;
+      margin-right: 10px;
+    }
+    .select-device-text {
+      font-family: "Work-Sans-Semibold";
+      font-size: calc(1rem + (45 - 22) * ((100vw - 320px) / (1920 - 320)));
+      // font-size: 1.6rem;
+    }
+  }
+  .append-tick > .bi {
+    color: #0085c1;
+    margin-right: 5px;
+    font-size: 1.1rem;
+  }
+
+  .select-gadgets-wrapper {
+    // justify-content: space-between;
+    a {
+      text-decoration: none;
+      text-align: center;
+      .device-container {
+        padding: 20px;
+        margin: 1rem;
+        margin-left: 0;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px 5px #d3d3d3;
+        -webkit-box-shadow: 0px 0px 15px 5px #d3d3d3;
+        -moz-box-shadow: 0px 0px 15px 5px #d3d3d3;
+
+        .device-label {
+          align-items: center;
+          font-family: "Work-Sans-Regular";
+          i {
+            margin-right: 5px;
+            background: linear-gradient(
+              to right,
+              #042b46,
+              #005879,
+              #008aa8,
+              #00bfd0,
+              #32f6ed
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+          span {
+            color: black;
+          }
+        }
+      }
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}

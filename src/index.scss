@@ -1,0 +1,108 @@
+@font-face {
+  font-family: "Nutio-Black";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/font/Nunito/Nunito-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Work-Sans-Light";
+  src: url("./assets/font/Work_Sans/static/WorkSans-Light.ttf");
+}
+
+@font-face {
+  font-family: "Work-Sans-Light-Italic";
+  src: url("./assets/font/Work_Sans/static/WorkSans-LightItalic.ttf");
+}
+
+@font-face {
+  font-family: "Work-Sans-Medium";
+  src: url("./assets/font/Work_Sans/static/WorkSans-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Work-Sans-Medium-Italic";
+  src: url("./assets/font/Work_Sans/static/WorkSans-MediumItalic.ttf");
+}
+
+@font-face {
+  font-family: "Work-Sans-Regular";
+  src: url("./assets/font/Work_Sans/static/WorkSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Work-Sans-Italic";
+  src: url("./assets/font/Work_Sans/static/WorkSans-Italic.ttf");
+}
+
+@font-face {
+  font-family: "Work-Sans-Semibold";
+  src: url("./assets/font/Work_Sans/static/WorkSans-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Work-Sans-Semibold-Italic";
+  src: url("./assets/font/Work_Sans/static/WorkSans-SemiBoldItalic.ttf");
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+.flex-ds-rw {
+  display: flex;
+  flex-direction: row;
+}
+.flex-ds-cl {
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-center {
+  align-items: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.append-after-symbol:after {
+  content: "\003e";
+  margin-left: 5px;
+  font-size: 10px;
+  color: #007bff;
+  vertical-align: text-bottom;
+}
+
+.append-before-symbol:before {
+  content: "\003c";
+  margin-right: 5px;
+  font-size: 15px;
+  color: #007bff;
+  vertical-align: text-bottom;
+}

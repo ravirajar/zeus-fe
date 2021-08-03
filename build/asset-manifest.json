@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.401ae515.chunk.css",
+    "main.js": "/static/js/main.d12ff497.chunk.js",
+    "main.js.map": "/static/js/main.d12ff497.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.3e3019fa.js",
+    "runtime-main.js.map": "/static/js/runtime-main.3e3019fa.js.map",
+    "static/css/2.b0e59927.chunk.css": "/static/css/2.b0e59927.chunk.css",
+    "static/js/2.86c88a9c.chunk.js": "/static/js/2.86c88a9c.chunk.js",
+    "static/js/2.86c88a9c.chunk.js.map": "/static/js/2.86c88a9c.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.b0e59927.chunk.css.map": "/static/css/2.b0e59927.chunk.css.map",
+    "static/css/main.401ae515.chunk.css.map": "/static/css/main.401ae515.chunk.css.map",
+    "static/js/2.86c88a9c.chunk.js.LICENSE.txt": "/static/js/2.86c88a9c.chunk.js.LICENSE.txt",
+    "static/media/11 pro max.jpeg": "/static/media/11 pro max.df437db3.jpeg",
+    "static/media/12 pro max.jpeg": "/static/media/12 pro max.df437db3.jpeg",
+    "static/media/index.scss": "/static/media/WorkSans-SemiBoldItalic.2bf7182a.ttf",
+    "static/media/bootstrap-icons.css": "/static/media/bootstrap-icons.dfd0ea12.woff2",
+    "static/media/google.jpeg": "/static/media/google.5973d611.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3e3019fa.js",
+    "static/css/2.b0e59927.chunk.css",
+    "static/js/2.86c88a9c.chunk.js",
+    "static/css/main.401ae515.chunk.css",
+    "static/js/main.d12ff497.chunk.js"
+  ]
+}

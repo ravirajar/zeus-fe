@@ -1,0 +1,160 @@
+.repair-device-questionaire {
+  .question-component-container {
+    margin: 40px auto;
+    border-radius: 10px;
+    padding: 40px 20px;
+    box-shadow: 0px 0px 15px 5px #eeeeee;
+    -webkit-box-shadow: 0px 0px 15px 5px #eeeeee;
+    -moz-box-shadow: 0px 0px 15px 5px #eeeeee;
+    background: #fafafa;
+    .question-component {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      vertical-align: middle;
+      .question-tag {
+        font-size: 1.5rem;
+        font-family: "Work-Sans-Semibold";
+      }
+
+      .admin-contact-text {
+        font-family: "Work-Sans-Italic";
+      }
+      .mobile-number-wrapper {
+        font-family: "Work-Sans-Italic";
+        margin-top: 15px !important;
+        .mobile-number-field {
+          margin-top: 5px !important;
+          font-family: "Work-Sans-Regular";
+          width: 130px;
+          border-radius: 5px;
+          border: 1px solid #0085c1;
+          display: block;
+        }
+      }
+      .prev-next-question {
+        justify-content: space-between;
+        a {
+          font-family: "Work-Sans-Regular";
+        }
+        .next-question-wrapper {
+          margin-right: 20px;
+          .next-question {
+            padding: 10px 20px;
+            background: #1082c0;
+            color: #fff;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+    .question-image-container {
+      text-align: center;
+      .device-details {
+        display: flex;
+        flex-direction: row;
+        font-family: "Work-Sans-Regular";
+        justify-content: center;
+        font-size: 2rem;
+        color: #0085c1;
+        .details-label {
+          min-width: 160px;
+          word-wrap: break-word;
+        }
+        .details-value {
+          margin-left: 10px;
+          word-wrap: break-word;
+        }
+      }
+    }
+    .device-name {
+      font-size: 2rem;
+      margin-bottom: 10px !important;
+      font-family: "Work-Sans-Regular";
+      color: #1082c0;
+    }
+    .question-text {
+      font-size: 1rem;
+      font-family: "Work-Sans-Regular";
+      .quote-text {
+        font-size: 1.5rem;
+        .price-quote {
+          font-size: 2rem;
+          color: #ff6565;
+        }
+        .device-count {
+          color: #2fad27;
+        }
+      }
+    }
+    .answer-list-wrapper {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      .answer-option {
+        box-shadow: 0px 0px 15px 1px #bcbcbc;
+        -webkit-box-shadow: 0px 0px 15px 1px #bcbcbc;
+        -moz-box-shadow: 0px 0px 15px 1px #bcbcbc;
+        padding: 10px 20px;
+        margin-right: 20px;
+        border-radius: 10px;
+        font-family: "Work-Sans-Regular";
+        cursor: pointer;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        input {
+          margin-right: 10px;
+        }
+        &:hover {
+          box-shadow: 0px 0px 15px 5px #d4daeb;
+          -webkit-box-shadow: 0px 0px 15px 5px #d4daeb;
+          -moz-box-shadow: 0px 0px 15px 5px #d4daeb;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+  .sell-old-mobile {
+    .content-wrapper {
+      font-size: 1.5rem;
+      .select-gadgets-wrapper {
+        .bi {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+  .select-brand-container {
+    justify-content: space-evenly;
+  }
+}
+@media (min-width: 481px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+}
+@media (min-width: 641px) {
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  .sell-old-mobile {
+    .content-wrapper {
+      .select-gadgets-wrapper {
+        a {
+          .bi {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+  .select-brand-container {
+    justify-content: normal;
+  }
+}
+@media (min-width: 961px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+}

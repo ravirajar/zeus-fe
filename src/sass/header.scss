@@ -1,0 +1,38 @@
+@import "./color.scss";
+
+.header-top {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  justify-content: space-around;
+  background-color: $primary;
+
+  &--social-media-container {
+    display: flex;
+    .social-link {
+      margin: 0 5px;
+      .bi {
+        color: white;
+      }
+    }
+  }
+
+  .logo-img {
+    width: 80px;
+  }
+}
+
+.navbar {
+  box-shadow: 0px -1px 15px -4px rgba(0, 133, 193, 1);
+  -webkit-box-shadow: 0px -1px 15px -4px rgba(0, 133, 193, 1);
+  -moz-box-shadow: 0px -1px 15px -4px rgba(0, 133, 193, 1);
+}
+
+.mr-auto.navbar-nav {
+  font-size: 20px;
+  font-weight: 600;
+
+  a.nav-link {
+    color: black;
+  }
+}
