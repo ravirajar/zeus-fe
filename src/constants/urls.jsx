@@ -1,6 +1,6 @@
 export default {
   //   API_BASE_PATH: "https://brand-leaderboard.unileversolutions.com/",
-  API_BASE_PATH_LOCAL: "http://localhost:3005/",
+  API_BASE_PATH_LOCAL: "https://dashboard.heroku.com/",
 
   API_GET_BRAND_LIST: "api/v1/sellolddevice/getbrandlist?type=",
   API_GET_DEVICE_LIST: "api/v1/sellolddevice/getdevicelist?type=",
