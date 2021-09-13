@@ -58,6 +58,9 @@ const SelectDeviceComponent = (props) => {
                           src={image.default}
                         />
                       </div>
+                      <div className="individual-brand-wrapper">
+                        <span className="brand-name">{data}</span>
+                      </div>
                     </a>
                   </div>
                 );
