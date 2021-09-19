@@ -4,6 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { getPricing } from "../api/index";
 
 const QuestionComponent = () => {
+  const history = useHistory();
   const [questionCount, setQuestionCount] = useState([
     true,
     false,
@@ -24,6 +25,8 @@ const QuestionComponent = () => {
   const [pricingDetails, setPricingDetails] = useState();
   const [noPricing, setNoPricing] = useState(false);
   const [finalEstimate, setFinalEstimate] = useState(0);
+  const [mobileNumber, setMobileNumber] = useState(null);
+  const [hideNext, setHideNext] = useState(true);
 
   const { device } = useParams();
   const { brand } = useParams();
@@ -136,6 +139,17 @@ const QuestionComponent = () => {
     }
   };
 
+  const changeMobileNumber = (event) => {
+    const validMobileNumber = new RegExp("^[0-9]{8,}$");
+
+    if (validMobileNumber.test(event.target.value)) {
+      setHideNext(false);
+      setMobileNumber(event.target.value);
+    } else {
+      setHideNext(true);
+    }
+  };
+
   return (
     <div className="container sell-old-device__questionaire">
       <h2 style={{ marginTop: 25, fontFamily: "Work-Sans-Semibold" }}>
@@ -228,6 +242,14 @@ const QuestionComponent = () => {
                     ))
                   : null}
               </ul>
+              <a
+                href="#"
+                onClick={(event) => {
+                  history.goBack();
+                }}
+              >
+                <span className="append-before-symbol">Select Device</span>
+              </a>
             </>
           ) : null}
           {questionCount[1] ? (
@@ -428,6 +450,10 @@ const QuestionComponent = () => {
                   type="text"
                   className="mobile-number-field"
                   name="mobile-number"
+                  // value={mobileNumber}
+                  onChange={(event) => {
+                    changeMobileNumber(event);
+                  }}
                 />
               </p>
               <div className="prev-next-question flex-ds-rw mt-30">
@@ -443,21 +469,24 @@ const QuestionComponent = () => {
                     Previous
                   </span>
                 </a>
-                <a
-                  href="#"
-                  className="next-question-wrapper"
-                  onClick={(event) => {
-                    calculatePricing(event);
-                  }}
-                >
-                  <span className="next-question">Next</span>
-                </a>
+
+                {!hideNext ? (
+                  <a
+                    href="#"
+                    className="next-question-wrapper"
+                    onClick={(event) => {
+                      calculatePricing(event);
+                    }}
+                  >
+                    <span className="next-question">Next</span>
+                  </a>
+                ) : null}
               </div>
             </>
           ) : null}
           {questionCount[7] ? (
             <>
-              <p className="question-text">
+              {/* <p className="question-text">
                 {noPricing ? null : (
                   <span className="quote-text">
                     Get Upto{" "}
@@ -468,10 +497,20 @@ const QuestionComponent = () => {
                     </span>
                   </span>
                 )}
-              </p>
+              </p> */}
               <p className="admin-contact-text">
                 Our Customer Care will contact you for further details.
               </p>
+
+              <a
+                href="#"
+                className="next-question-wrapper"
+                onClick={() => {
+                  history.push("/sell-device/" + device);
+                }}
+              >
+                <span className="next-question">Get another quote</span>
+              </a>
             </>
           ) : null}
         </div>

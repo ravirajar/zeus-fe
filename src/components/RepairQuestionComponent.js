@@ -11,6 +11,8 @@ const RepairQuestionComponent = () => {
     false,
   ]);
 
+  const history = useHistory();
+
   const [crackedScreen, setCrackedscreen] = useState();
   const [lcdReplacement, setLcdReplacement] = useState();
   const [battery, setBattery] = useState();
@@ -28,6 +30,8 @@ const RepairQuestionComponent = () => {
   const [repairCostDetails, setRepairCostDetails] = useState();
   const [serviceQuestionHeading, setServiceQuestionHeading] = useState([]);
   const [finalEstimate, setFinalEstimate] = useState();
+  const [mobileNumber, setMobileNumber] = useState(null);
+  const [hideNext, setHideNext] = useState(true);
 
   const { device } = useParams();
   const { brand } = useParams();
@@ -36,7 +40,7 @@ const RepairQuestionComponent = () => {
   const changeQuestionValue = (position) => {
     let questionCount = [false, false, false, false];
     questionCount[position + 1] = true;
-    console.log(questionCount);
+
     return questionCount;
   };
 
@@ -88,7 +92,7 @@ const RepairQuestionComponent = () => {
         } else {
           btnIssue.pop(target.value);
         }
-        console.log(btnIssue);
+
         setButtonIssue(btnIssue);
         break;
       }
@@ -99,7 +103,7 @@ const RepairQuestionComponent = () => {
         } else {
           audIssue.pop(target.value);
         }
-        console.log(audIssue);
+
         setAudioIssue(audIssue);
         break;
       }
@@ -111,7 +115,7 @@ const RepairQuestionComponent = () => {
         } else {
           housingIssue.pop(target.value);
         }
-        console.log(housingIssue);
+
         setHousingDamage(housingIssue);
         break;
       }
@@ -123,7 +127,7 @@ const RepairQuestionComponent = () => {
         } else {
           cameraDefects.pop(target.value);
         }
-        console.log(cameraDefects);
+
         setCameraIssue(cameraDefects);
         break;
       }
@@ -163,7 +167,6 @@ const RepairQuestionComponent = () => {
       audioIssue.forEach((element) => {
         if (element === Object.keys(ele)[0]) {
           estimatedPrice += ele[element];
-          console.log(ele[element]);
         }
       });
     });
@@ -172,7 +175,6 @@ const RepairQuestionComponent = () => {
       cameraIssue.forEach((element) => {
         if (element === Object.keys(ele)[0]) {
           estimatedPrice += ele[element];
-          console.log(ele[element]);
         }
       });
     });
@@ -181,7 +183,6 @@ const RepairQuestionComponent = () => {
       buttonIssue.forEach((element) => {
         if (element === Object.keys(ele)[0]) {
           estimatedPrice += ele[element];
-          console.log(ele[element]);
         }
       });
     });
@@ -190,7 +191,6 @@ const RepairQuestionComponent = () => {
       housingDamage.forEach((element) => {
         if (element === Object.keys(ele)[0]) {
           estimatedPrice += ele[element];
-          console.log(ele[element]);
         }
       });
     });
@@ -198,55 +198,57 @@ const RepairQuestionComponent = () => {
     repairCostDetails["Cracked Screen"].forEach((ele) => {
       if (crackedScreen === Object.keys(ele)[0]) {
         estimatedPrice += ele[crackedScreen];
-        console.log(ele[crackedScreen]);
       }
     });
 
     repairCostDetails["LCD Replacement"].forEach((ele) => {
       if (lcdReplacement === Object.keys(ele)[0]) {
         estimatedPrice += ele[lcdReplacement];
-        console.log(ele[lcdReplacement]);
       }
     });
 
     repairCostDetails["Battery"].forEach((ele) => {
       if (battery === Object.keys(ele)[0]) {
         estimatedPrice += ele[battery];
-        console.log(ele[battery]);
       }
     });
 
     if (autoRestart) {
       estimatedPrice += repairCostDetails["Auto-Restart"];
-      console.log(repairCostDetails["Auto-Restart"]);
     }
 
     if (chargingIssue) {
       estimatedPrice += repairCostDetails["Charging Issue"];
-      console.log(repairCostDetails["Charging Issue"]);
     }
 
     if (faceId) {
       estimatedPrice += repairCostDetails["Face Id"];
-      console.log(repairCostDetails["Face Id"]);
     }
 
     if (waterDamage) {
       estimatedPrice += repairCostDetails["Water Damage"];
-      console.log(repairCostDetails["Water Damage"]);
     }
 
     if (powerLeakage) {
       estimatedPrice += repairCostDetails["Power Leakage"];
-      console.log(repairCostDetails["Power Leakage"]);
     }
 
     if (powerOnIssue) {
       estimatedPrice += repairCostDetails["Cant Power On"];
-      console.log(repairCostDetails["Cant Power On"]);
     }
 
     estimatedPrice > 0 ? setFinalEstimate(estimatedPrice) : setFinalEstimate(0);
+  };
+
+  const changeMobileNumber = (event) => {
+    const validMobileNumber = new RegExp("^[0-9]{8,}$");
+
+    if (validMobileNumber.test(event.target.value)) {
+      setHideNext(false);
+      setMobileNumber(event.target.value);
+    } else {
+      setHideNext(true);
+    }
   };
 
   return (
@@ -368,7 +370,6 @@ const RepairQuestionComponent = () => {
                 href="#"
                 className="prev-question-wrapper"
                 onClick={(event) => {
-                  console.log("Test 0");
                   // optionSelected(event, 0);
                 }}
               >
@@ -434,7 +435,6 @@ const RepairQuestionComponent = () => {
                 href="#"
                 className="prev-question-wrapper"
                 onClick={(event) => {
-                  console.log("Test 10");
                   optionSelected(event, -1);
                 }}
               >
@@ -446,7 +446,6 @@ const RepairQuestionComponent = () => {
                 href="#"
                 className="next-question-wrapper"
                 onClick={(event) => {
-                  console.log("Test 11");
                   optionSelected(event, 1);
                 }}
               >
@@ -598,6 +597,10 @@ const RepairQuestionComponent = () => {
                   type="text"
                   className="mobile-number-field"
                   name="mobile-number"
+                  // value={mobileNumber}
+                  onChange={(event) => {
+                    changeMobileNumber(event);
+                  }}
                 />
               </p>
               <div className="prev-next-question flex-ds-rw mt-30 col-md-12">
@@ -612,15 +615,18 @@ const RepairQuestionComponent = () => {
                     Previous
                   </span>
                 </a>
-                <a
-                  href="#"
-                  className="next-question-wrapper"
-                  onClick={(event) => {
-                    calculatePricing(event);
-                  }}
-                >
-                  <span className="next-question">Next</span>
-                </a>
+
+                {!hideNext ? (
+                  <a
+                    href="#"
+                    className="next-question-wrapper"
+                    onClick={(event) => {
+                      calculatePricing(event);
+                    }}
+                  >
+                    <span className="next-question">Next</span>
+                  </a>
+                ) : null}
               </div>
             </>
           ) : null}
@@ -638,6 +644,17 @@ const RepairQuestionComponent = () => {
               <p className="admin-contact-text">
                 Our Customer Care will contact you for further details.
               </p>
+              <div className="prev-next-question flex-ds-rw mt-30 col-md-12">
+                <a
+                  href="#"
+                  className="next-question-wrapper"
+                  onClick={() => {
+                    history.push("/repair/" + device);
+                  }}
+                >
+                  <span className="next-question">Get another quote</span>
+                </a>
+              </div>
             </>
           ) : null}
         </div>

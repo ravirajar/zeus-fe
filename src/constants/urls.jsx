@@ -1,5 +1,5 @@
 export default {
-  //   API_BASE_PATH: "https://brand-leaderboard.unileversolutions.com/",
+  // API_BASE_PATH_LOCAL: "http://localhost:4000/",
   API_BASE_PATH_LOCAL: "https://zeus-node.herokuapp.com/",
 
   API_GET_BRAND_LIST: "api/v1/sellolddevice/getbrandlist?type=",
