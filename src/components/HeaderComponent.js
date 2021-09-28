@@ -26,7 +26,7 @@ function HeaderComponent() {
         </div>
       </div>
       <Navbar bg="white" expand="lg">
-        <Navbar.Brand href="/home">
+        <Navbar.Brand href="http://livedemo.in.net/zuesmobileshop/contacts/">
           <img
             src="http://livedemo.in.net/zuesmobileshop/wp-content/uploads/2021/05/ZuesGlobe2019-min3.png"
             className="logo-img"
@@ -35,7 +35,9 @@ function HeaderComponent() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/">HOME</Nav.Link>
+            <Nav.Link href="http://livedemo.in.net/zuesmobileshop/contacts/">
+              HOME
+            </Nav.Link>
             <Nav.Link href="/repair">SERVICE</Nav.Link>
             <Nav.Link href="/sell-device">SELL MOBILE</Nav.Link>
           </Nav>
