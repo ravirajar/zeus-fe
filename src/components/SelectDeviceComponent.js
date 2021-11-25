@@ -14,11 +14,23 @@ const SelectDeviceComponent = (props) => {
     event.preventDefault();
     if (props.type === "repair") {
       history.push(
-        "/repair/" + device + "/" + brand + "/" + model + "/question"
+        "/repair/" +
+          device +
+          "/" +
+          brand +
+          "/" +
+          encodeURIComponent(model) +
+          "/question"
       );
     } else {
       history.push(
-        "/sell-device/" + device + "/" + brand + "/" + model + "/question"
+        "/sell-device/" +
+          device +
+          "/" +
+          brand +
+          "/" +
+          encodeURIComponent(model) +
+          "/question"
       );
     }
   };

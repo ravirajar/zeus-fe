@@ -35,7 +35,8 @@ const RepairQuestionComponent = () => {
 
   const { device } = useParams();
   const { brand } = useParams();
-  const { model } = useParams();
+  let { model } = useParams();
+  model = decodeURIComponent(model);
 
   const changeQuestionValue = (position) => {
     let questionCount = [false, false, false, false];
@@ -271,7 +272,7 @@ const RepairQuestionComponent = () => {
           )}
 
           <p className="device-details">
-            <span className="details-label">iPhone 11 Pro Max</span>
+            <span className="details-label">{model}</span>
           </p>
         </div>
         <div className="question-component container col-md-8">

@@ -30,7 +30,8 @@ const QuestionComponent = () => {
 
   const { device } = useParams();
   const { brand } = useParams();
-  const { model } = useParams();
+  let { model } = useParams();
+  model = decodeURIComponent(model);
 
   const changeQuestionValue = (position) => {
     let questionCount = [
