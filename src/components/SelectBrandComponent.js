@@ -39,24 +39,24 @@ const SelectBrandComponent = (props) => {
             ? deviceList.map((data, id) => {
                 let imgName;
                 if (
-                  data.toLowercase() === "apple" ||
-                  data.toLowercase() === "asus" ||
-                  data.toLowercase() === "google" ||
-                  data.toLowercase() === "honor" ||
-                  data.toLowercase() === "htc" ||
-                  data.toLowercase() === "lenovo" ||
-                  data.toLowercase() === "lg" ||
-                  data.toLowercase() === "mi" ||
-                  data.toLowercase() === "apple" ||
-                  data.toLowercase() === "motorola" ||
-                  data.toLowercase() === "nokia" ||
-                  data.toLowercase() === "oneplus" ||
-                  data.toLowercase() === "oppo" ||
-                  data.toLowercase() === "realme" ||
-                  data.toLowercase() === "samsung" ||
-                  data.toLowercase() === "vivo"
+                  data.toLowerCase() === "apple" ||
+                  data.toLowerCase() === "asus" ||
+                  data.toLowerCase() === "google" ||
+                  data.toLowerCase() === "honor" ||
+                  data.toLowerCase() === "htc" ||
+                  data.toLowerCase() === "lenovo" ||
+                  data.toLowerCase() === "lg" ||
+                  data.toLowerCase() === "mi" ||
+                  data.toLowerCase() === "apple" ||
+                  data.toLowerCase() === "motorola" ||
+                  data.toLowerCase() === "nokia" ||
+                  data.toLowerCase() === "oneplus" ||
+                  data.toLowerCase() === "oppo" ||
+                  data.toLowerCase() === "realme" ||
+                  data.toLowerCase() === "samsung" ||
+                  data.toLowerCase() === "vivo"
                 ) {
-                  imgName = imgName.toLowercase();
+                  imgName = imgName.toLowerCase();
                 } else {
                   imgName = "apple";
                 }
