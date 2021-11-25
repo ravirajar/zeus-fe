@@ -240,18 +240,20 @@ const QuestionComponent = () => {
               <p className="question-text">Choose a variant </p>
               <ul className="answer-list-wrapper flex-ds-rw mt-20">
                 {pricingDetails
-                  ? pricingDetails.storage.map((data, id) => (
-                      <li
-                        key={id}
-                        className="answer-option"
-                        onClick={(event) => {
-                          setVariant(Object.keys(data));
-                          optionSelected(event, 0);
-                        }}
-                      >
-                        <span> {Object.keys(data)} GB</span>
-                      </li>
-                    ))
+                  ? pricingDetails.storage.map((data, id) => {
+                      return data[Object.keys(data)] !== 0 ? (
+                        <li
+                          key={id}
+                          className="answer-option"
+                          onClick={(event) => {
+                            setVariant(Object.keys(data));
+                            optionSelected(event, 0);
+                          }}
+                        >
+                          <span> {Object.keys(data)} GB</span>
+                        </li>
+                      ) : null;
+                    })
                   : null}
               </ul>
               <a

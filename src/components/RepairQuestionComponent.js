@@ -538,7 +538,7 @@ const RepairQuestionComponent = () => {
                 if (
                   questionData.toLowerCase() === "face id" ||
                   questionData.toLowerCase() === "water damage" ||
-                  questionData.toLowerCase() === "auto restart" ||
+                  questionData.toLowerCase() === "auto-restart" ||
                   questionData.toLowerCase() === "cant power on" ||
                   questionData.toLowerCase() === "power leakage"
                 ) {
