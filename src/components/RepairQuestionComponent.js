@@ -258,10 +258,17 @@ const RepairQuestionComponent = () => {
       </h2>
       <div className="row question-component-container">
         <div className="question-image-container col-md-4">
-          <img
-            src={require("../assets/mobile/" + model + ".jpeg").default}
-            alt="mobile"
-          />
+          {model === "11 pro max" || model === "12 pro max" ? (
+            <img
+              src={require("../assets/mobile/" + model + ".jpeg").default}
+              alt="mobile"
+            />
+          ) : (
+            <img
+              src={require("../assets/mobile/11 pro max.jpeg").default}
+              alt="mobile"
+            />
+          )}
 
           <p className="device-details">
             <span className="details-label">iPhone 11 Pro Max</span>
