@@ -157,7 +157,12 @@ const QuestionComponent = () => {
       </h2>
       <div className="row question-component-container">
         <div className="question-image-container col-md-4">
-          <img src={require("../assets/mobile/" + model + ".jpeg").default} />
+          {model === "11 pro max" || model === "12 pro max" ? (
+            <img src={require("../assets/mobile/" + model + ".jpeg").default} />
+          ) : (
+            <img src={require("../assets/mobile/11 pro max.jpeg").default} />
+          )}
+
           {variant ? (
             <p className="device-details">
               <span className="details-label">Variant</span>
