@@ -56,7 +56,7 @@ const SelectBrandComponent = (props) => {
                   data.toLowerCase() === "samsung" ||
                   data.toLowerCase() === "vivo"
                 ) {
-                  imgName = imgName.toLowerCase();
+                  imgName = data.toLowerCase();
                 } else {
                   imgName = "apple";
                 }
