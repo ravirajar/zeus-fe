@@ -37,7 +37,30 @@ const SelectBrandComponent = (props) => {
         <div className="select-brand-container">
           {deviceList
             ? deviceList.map((data, id) => {
-                const image = require("../assets/logo/" + data + ".jpeg");
+                let imgName;
+                if (
+                  data.toLowercase() === "apple" ||
+                  data.toLowercase() === "asus" ||
+                  data.toLowercase() === "google" ||
+                  data.toLowercase() === "honor" ||
+                  data.toLowercase() === "htc" ||
+                  data.toLowercase() === "lenovo" ||
+                  data.toLowercase() === "lg" ||
+                  data.toLowercase() === "mi" ||
+                  data.toLowercase() === "apple" ||
+                  data.toLowercase() === "motorola" ||
+                  data.toLowercase() === "nokia" ||
+                  data.toLowercase() === "oneplus" ||
+                  data.toLowercase() === "oppo" ||
+                  data.toLowercase() === "realme" ||
+                  data.toLowercase() === "samsung" ||
+                  data.toLowercase() === "vivo"
+                ) {
+                  imgName = imgName.toLowercase();
+                } else {
+                  imgName = "apple";
+                }
+                const image = require("../assets/logo/" + imgName + ".jpeg");
                 return (
                   <div
                     key={id}

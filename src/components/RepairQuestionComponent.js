@@ -58,7 +58,7 @@ const RepairQuestionComponent = () => {
         tempHeading.splice(tempHeading.indexOf("type"), 1);
         tempHeading.splice(tempHeading.indexOf("model"), 1);
         tempHeading.splice(tempHeading.indexOf("brandName"), 1);
-        tempHeading.splice(tempHeading.indexOf("binary"), 1);
+        // tempHeading.splice(tempHeading.indexOf("binary"), 1);
         setRepairCostDetails(results.data[0]);
         setServiceQuestionHeading(tempHeading);
       }

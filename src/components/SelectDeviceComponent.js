@@ -42,7 +42,16 @@ const SelectDeviceComponent = (props) => {
         <div className="select-brand-container">
           {modelList
             ? modelList.map((data, id) => {
-                const image = require("../assets/mobile/" + data + ".jpeg");
+                let imgData;
+                if (
+                  data.toLowerCase() === "11 pro max" ||
+                  data.toLowerCase() === "12 pro max"
+                ) {
+                  imgData = data.toLowerCase();
+                } else {
+                  imgData = "11 pro max";
+                }
+                const image = require("../assets/mobile/" + imgData + ".jpeg");
                 return (
                   <div
                     key={id}
