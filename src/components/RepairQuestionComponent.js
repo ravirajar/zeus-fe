@@ -378,11 +378,11 @@ const RepairQuestionComponent = () => {
                 href="#"
                 className="prev-question-wrapper"
                 onClick={(event) => {
-                  // optionSelected(event, 0);
+                  history.goBack();
                 }}
               >
                 <span className="append-before-symbol prev-question">
-                  Previous
+                  Select Device
                 </span>
               </a>
               <a
