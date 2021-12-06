@@ -500,7 +500,7 @@ const QuestionComponent = () => {
           ) : null}
           {questionCount[7] ? (
             <>
-              {/* <p className="question-text">
+              <p className="question-text">
                 {noPricing ? null : (
                   <span className="quote-text">
                     Get Upto{" "}
@@ -511,7 +511,7 @@ const QuestionComponent = () => {
                     </span>
                   </span>
                 )}
-              </p> */}
+              </p>
               <p className="admin-contact-text">
                 Our Customer Care will contact you for further details.
               </p>
